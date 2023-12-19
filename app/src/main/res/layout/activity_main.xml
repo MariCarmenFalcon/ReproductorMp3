@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbarSize="2dp"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#6B886C">
+
+        <FrameLayout
+            android:id="@+id/frameLayout"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="20dp"
+            android:background="#B3ECB5"
+            app:layout_constraintBottom_toTopOf="@+id/imagenCancion"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/menuDrawer"
+                    android:layout_width="28dp"
+                    android:layout_height="42dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="#6B886C"
+                    android:contentDescription="botonMenu"
+                    android:onClick="botonDrawer"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.966"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0"
+                    app:srcCompat="@android:drawable/ic_menu_sort_by_size" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/imagenCancion"
+            android:layout_width="223dp"
+            android:layout_height="180dp"
+            android:contentDescription="imagendeCancion"
+            android:foreground="@drawable/spotify"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.297"
+            tools:visibility="visible" />
+
+        <LinearLayout
+            android:id="@+id/contenedorBotones"
+            android:layout_width="252dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="52dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.572"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <ImageButton
+                android:id="@+id/atras"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:backgroundTint="@null"
+                android:contentDescription="botonAtras"
+                app:srcCompat="@drawable/atras" />
+
+            <ImageButton
+                android:id="@+id/play_pausa"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:backgroundTint="@null"
+                android:contentDescription="botonPlay"
+                app:srcCompat="@drawable/play" />
+
+            <ImageButton
+                android:id="@+id/siguiente"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:backgroundTint="@null"
+                android:contentDescription="botonSiguiente"
+                app:srcCompat="@drawable/siguiente" />
+
+            <ImageButton
+                android:id="@+id/stop"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:backgroundTint="@null"
+                android:contentDescription="botonStop"
+                app:srcCompat="@drawable/stop" />
+
+            <ImageButton
+                android:id="@+id/aleatorio"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:backgroundTint="@null"
+                android:contentDescription="botonAleatorio"
+                app:srcCompat="@drawable/aleatorio" />
+
+            <ImageButton
+                android:id="@+id/bucle"
+                android:layout_width="0dp"
+                android:layout_height="56dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:backgroundTint="@null"
+                android:contentDescription="botonBucle"
+                app:srcCompat="@drawable/bucle" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/TextNombCancion"
+            android:layout_width="240dp"
+            android:layout_height="46dp"
+            android:layout_marginTop="8dp"
+            android:contentDescription="campoNombCancion"
+            android:ems="10"
+            android:inputType="text"
+            app:layout_constraintBottom_toTopOf="@+id/contenedorBotones"
+            app:layout_constraintEnd_toEndOf="@+id/imagenCancion"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/imagenCancion"
+            app:layout_constraintTop_toBottomOf="@+id/imagenCancion"
+            app:layout_constraintVertical_bias="0.085" />
+
+        <TextView
+            android:id="@+id/textViewTiempoTranscurrido"
+            android:layout_width="70dp"
+            android:layout_height="27dp"
+            app:layout_constraintBottom_toTopOf="@+id/seekBar"
+            app:layout_constraintEnd_toEndOf="@+id/seekBar"
+            app:layout_constraintHorizontal_bias="0.016"
+            app:layout_constraintStart_toStartOf="@+id/seekBar"
+            app:layout_constraintTop_toBottomOf="@+id/TextNombCancion"
+            app:layout_constraintVertical_bias="0.763" />
+
+        <TextView
+            android:id="@+id/textViewTiempoRestante"
+            android:layout_width="67dp"
+            android:layout_height="27dp"
+            app:layout_constraintBottom_toTopOf="@+id/seekBar"
+            app:layout_constraintEnd_toEndOf="@+id/seekBar"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/seekBar"
+            app:layout_constraintTop_toBottomOf="@+id/TextNombCancion"
+            app:layout_constraintVertical_bias="0.788" />
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="252dp"
+            android:layout_height="58dp"
+            android:layout_marginBottom="24dp"
+            android:progressBackgroundTint="#151313"
+            android:progressTint="#191818"
+            app:layout_constraintBottom_toTopOf="@+id/contenedorBotones"
+            app:layout_constraintEnd_toEndOf="@+id/contenedorBotones"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/contenedorBotones"
+            app:layout_constraintTop_toBottomOf="@+id/TextNombCancion"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:layout_marginRight="25dp"
+        android:background="#D5F1D6">
+
+        <ListView
+            android:id="@+id/listView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#C1CCC1"
+
+            android:foregroundGravity="right|fill"
+            android:paddingTop="20dp"
+            android:paddingBottom="5dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+        </ListView>
+
+    </com.google.android.material.navigation.NavigationView>
+
+</androidx.drawerlayout.widget.DrawerLayout>
